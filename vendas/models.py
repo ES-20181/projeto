@@ -1,11 +1,21 @@
 from django.db import models
 
 class Venda(models.Model):
+    ENTRADA = 'EN'
+    SAIDA = 'SA'
+    TIPO_ENTRADA_CHOICES = (
+        (ENTRADA, 'Entrada'),
+        (SAIDA, 'Saída'),
+    )
+    
     data = models.DateField(auto_now=False, auto_now_add=False)
     descricao = models.CharField(max_length=150)
     valor = models.DecimalField(max_digits=5, decimal_places=2)
-    # Enquanto não tem os formulário prontos
-    tipo = models.CharField(max_length=15)
+    tipo_entrada = models.CharField(
+        max_length=2,
+        choices=TIPO_ENTRADA_CHOICES,
+        default=ENTRADA,
+    )
 
     def __str__(self):
         return str(self.data)
