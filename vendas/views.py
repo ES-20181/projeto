@@ -2,10 +2,13 @@ from django.shortcuts import render, redirect
 from .models import Venda
 from .forms import VendaForm
 
+def dashboard(request):
+    # vendas = Venda.objects.all()
+    return render(request, 'vendas/dashboard.html')
 
 def listar_vendas(request):
     vendas = Venda.objects.all()
-    return render(request, 'vendas.html', {'vendas': vendas})
+    return render(request, 'vendas/vendas.html', {'vendas': vendas})
 
 
 def nova_venda(request):
@@ -15,7 +18,7 @@ def nova_venda(request):
         form.save()
         return redirect('listar_vendas')
 
-    return render(request, 'vendas-form.html', {'form': form})
+    return render(request, 'vendas/vendas-form.html', {'form': form})
 
 
 def atualizar_venda(request, id):
@@ -26,7 +29,7 @@ def atualizar_venda(request, id):
         form.save()
         return redirect('listar_vendas')
 
-    return render(request, 'vendas-form.html', {'form': form, 'venda': venda})
+    return render(request, 'vendas/vendas-form.html', {'form': form, 'venda': venda})
 
 
 def deletar_venda(request, id):
@@ -36,4 +39,4 @@ def deletar_venda(request, id):
         venda.delete()
         return redirect('listar_vendas')
 
-    return render(request, 'venda-deletar-confirm.html', {'venda': venda})
+    return render(request, 'vendas/venda-deletar-confirm.html', {'venda': venda})
