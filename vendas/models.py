@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Venda(models.Model):
     ENTRADA = 'EN'
     SAIDA = 'SA'
@@ -7,8 +8,8 @@ class Venda(models.Model):
         (ENTRADA, 'Entrada'),
         (SAIDA, 'Saída'),
     )
-    
-    data = models.DateField(auto_now=False, auto_now_add=False)
+
+    data = models.DateField()
     descricao = models.CharField(max_length=150)
     valor = models.DecimalField(max_digits=5, decimal_places=2)
     tipo_entrada = models.CharField(
