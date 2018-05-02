@@ -7,4 +7,5 @@ urlpatterns = [
     path('nova', views.nova_venda, name='nova_venda'),
     path('atualizar/<int:id>/', views.atualizar_venda, name='atualizar_venda'),
     path('deletar/<int:id>/', views.deletar_venda, name='deletar_venda'),
+    path('login', views.login, name='login'),
 ]

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Venda
 from .forms import VendaForm
+# import time
 
 
 def dashboard(request):
@@ -50,3 +51,10 @@ def deletar_venda(request, id):
     return render(request,
                   'vendas/venda-deletar-confirm.html',
                   {'venda': venda})
+
+
+def login(request):
+    # time.sleep(5)
+    # if True:
+    #     return redirect('dashboard')
+    return render(request, 'vendas/login.html')
