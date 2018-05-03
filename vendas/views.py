@@ -26,7 +26,7 @@ def nova_venda(request):
         form.save()
         return redirect('listar_vendas')
 
-    return render(request, 'vendas/vendas-form.html', {'form': form})
+    return render(request, 'vendas/cad-venda.html', {'form': form})
 
 
 def atualizar_venda(request, id):
