@@ -15,8 +15,10 @@ def dashboard(request):
 
 
 def listar_vendas(request):
-    vendas = Venda.objects.all()
-    return render(request, 'vendas/vendas.html', {'vendas': vendas})
+    # vendas = Venda.objects.all()
+    # if (codigo):
+    #     return render(request, 'vendas/busc-venda.html', {'vendas': vendas})
+    return render(request, 'vendas/busc-venda.html')
 
 
 def nova_venda(request):
