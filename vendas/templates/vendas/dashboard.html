@@ -44,7 +44,6 @@
             <li class="active"><a href="{% url 'listar_vendas' %}">Vendas</a></li>
             <li><a href="#">Histórico</a></li>
             <li><a href="#">Estoque</a></li>
-            <li><a href="#">Reservas</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -52,13 +51,13 @@
 
           <div class="row placeholders">
 
-            <a href="#modal-cad" style="color: white">
+            <a href="{% url 'nova_venda' %}" style="color: white">
               <div class="col-xs-6 col-sm-3 placeholder" id="bloco" style="background-color: #3980c6">
                 <h2>Cadastrar <span class="glyphicon glyphicon-plus"></span></h2>
               </div>
           </a>
 
-          <a href="#modal-busc" style="color: white">
+          <a href="{% url 'listar_vendas' %}" style="color: white">
               <div class="col-xs-6 col-sm-3 placeholder" id="bloco" style="background-color: gray">
                 <h2>Buscar <span class="glyphicon glyphicon-search"></span></h2>
               </div>
@@ -81,7 +80,9 @@
                 {% for venda in vendas %}
                   <tr>
                     <td>{{ venda.data }}</td>
-                    <td>{{ venda.descricao }}</td>
+                    <a href="{% url 'atualizar_venda' venda.id %}">
+                      <td>{{ venda.descricao }}</td>
+                    </a>
                     <td>{{ venda.valor }}</td>
                     <td>{{ venda.tipo_entrada }}</td>
                   </tr>
