@@ -1,5 +1,4 @@
 {% load static %}
-{% load bootstrap %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -45,37 +44,33 @@
 				<form class="form-horizontal form-venda" action="" method="post">
 					<div class="form-group">
 						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="descricao">Data:</label>
+							<label class="control-label" for="descricao">Descrição:</label>
 						</div>
 						<div class="col-xs-12 col-md-10">
-							{{ form.data | bootstrap }}
-							{# <input type="text" name="descricao" id="descricao" class="form-control" autofocus="true" required="true"> #}
+							<input type="text" name="descricao" id="descricao" class="form-control" autofocus="true">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="qtd">Descrição:</label>
+							<label class="control-label" for="qtd">Qtd:</label>
 						</div>
 						<div class="col-xs-12 col-md-10">
-							{{ form.descricao | bootstrap}}
-							{# <input type="number" name="qtd" id="qtd" class="form-control" required="true"> #}
+							<input type="number" name="qtd" id="qtd" class="form-control">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="preco_unitario">Valor:</label>
+							<label class="control-label" for="preco_unitario">Preço(Unit):</label>
 						</div>
 						<div class="col-xs-12 col-md-10">
-							{{ form.valor | bootstrap }}
-							{# <input type="text" name="preco_unitario" id="preco_unitario" class="form-control" required="true"> #}
+							<input type="text" name="preco_unitario" id="preco_unitario" class="form-control">
 						</div>
 					</div><div class="form-group">
 						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="total">Tipo:</label>
+							<label class="control-label" for="total">Total:</label>
 						</div>
 						<div class="col-xs-12 col-md-10">
-							{{ form.tipo_entrada | bootstrap}}
-							{# <input type="text" name="total" id="total" class="form-control" required="true"> #}
+							<input type="text" name="total" id="total" class="form-control">
 						</div>
 					</div>
 					<button type="submit" class="btn btn-success">Cadastrar <span class="glyphicon glyphicon-plus"></span></button>
@@ -84,6 +79,3 @@
 		</div><!--row-->
 	</div><!--container-->
 	<!--fim do formulario de venda-->
-
-</body>
-</html>
