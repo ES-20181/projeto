@@ -1,24 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import Venda
 from .forms import VendaForm
-# import time
 
 
 def dashboard(request):
     vendas = Venda.objects.all()
-    # ultimas_vendas = []
-    # for venda in vendas:
-    #     for i in range(5):
-    #         ultimas_vendas.append(venda)
     return render(request, 'vendas/dashboard.html',
                   {'vendas': vendas})
-
-
-def listar_vendas(request):
-    # vendas = Venda.objects.all()
-    # if (codigo):
-    #     return render(request, 'vendas/busc-venda.html', {'vendas': vendas})
-    return render(request, 'vendas/busc-venda.html')
 
 
 def nova_venda(request):
@@ -29,6 +17,10 @@ def nova_venda(request):
         return redirect('listar_vendas')
 
     return render(request, 'vendas/cad-venda.html', {'form': form})
+
+
+def buscar_vendas(request):
+    return render(request, 'vendas/busc-venda.html')
 
 
 def atualizar_venda(request, id):
@@ -56,7 +48,4 @@ def deletar_venda(request, id):
 
 
 def login(request):
-    # time.sleep(5)
-    # if True:
-    #     return redirect('dashboard')
     return render(request, 'vendas/login.html')
