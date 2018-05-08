@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,38 +6,32 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Team ES2018.1">
 	<meta name="description" content="Sistema de vendas para restaurantes e quiósques">
-	<meta name="keywords" content="Sistemas, Restaurantes, Vendas, Controle, Estoque">
+	<meta name="keywords" content="Sistemas, Restaurantes, Vendas, Controle, Estoque, CRM">
 	<meta http-equiv="X-UA-Compatible" content="IE-edge, chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
-    <script src="{% static "js/jquery-3.1.1.min.js" %}"></script>
+	<link href="{% static "css/dashboard.css" %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static "css/generic.css" %}">
+	<link href="{% static "css/dashboard.css" %}" rel="stylesheet" type="text/css">
+  	<script src="{% static "js/jquery-3.1.1.min.js" %}"></script>
 	<script src="{% static "js/bootstrap.min.js" %}"></script>
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 </head>
 <body>
 	<!--início do menu-->
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default navbar-fixed-top">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href="#">CRM Vendas</a>
-	    </div>
-	    <div class="collapse navbar-collapse" id="menu">
-	      <ul class="nav navbar-nav navbar-right">
-	        
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
+          <a class="navbar-brand" href="#">CRM Vendas</a>
+      	</div>
 	  </div><!-- /.container-fluid -->
 	</nav><!-- /.navbar-default -->
 	<!--fim do menu-->
+
 	<!--inicio login-->
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 col-md-offset-4">
+			<div class="col-md-4 col-md-offset-4 div-form-venda form-venda">
 		      	<form class="form-signin" method="post" action="">
 			        <h2 class="form-signin-heading">Login</h2>
 			        <label for="inputUser" class="sr-only">Usuário</label>
@@ -59,5 +52,6 @@
 		</div>    
     </div> <!-- /container -->
 	<!--fim login-->
+	
 </body>
 </html>
