@@ -1,0 +1,16 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<form action=""{% url 'cadastro' %} method="post">
+			{% csrf_token %}
+			{% if form.erros %}
+				<p></p>
+			{% endif %}
+
+			{{ form }}
+			<button type="submit">Cadastrar</button>
+		</form>
+	</body>
+</html>
