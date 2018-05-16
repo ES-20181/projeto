@@ -67,5 +67,5 @@ def deletar_venda(request, id):
                   {'venda': venda})
 
 
-def login(request):
-    return render(request, 'vendas/login.html')
+# def login(request):
+#     return render(request, 'vendas/login.html')

@@ -1,6 +1,8 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+<!-- Django -->
+{% load static %} {% load bootstrap3 %}
+
 <head>
 	<title>CRM Vendas</title>
 	<meta charset="utf-8">
@@ -9,81 +11,67 @@
 	<meta name="keywords" content="Sistemas, Restaurantes, Vendas, Controle, Estoque, CRM">
 	<meta http-equiv="X-UA-Compatible" content="IE-edge, chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
-	<link href="{% static "css/dashboard.css" %}" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="{% static "css/generic.css" %}">
-	<link href="{% static "css/dashboard.css" %}" rel="stylesheet" type="text/css">
-  	<script src="{% static "js/jquery-3.1.1.min.js" %}"></script>
-	<script src="{% static "js/bootstrap.min.js" %}"></script>
+
+	<!-- Django Bootstrap -->
+	{% bootstrap_css %} {% bootstrap_javascript %} {% bootstrap_messages %}
+
+	<!-- Estilos -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/generic.css' %}">
+	<link href="{% static 'css/dashboard.css' %}" rel="stylesheet" type="text/css">
+
+	<!-- <script src="{% static " js/jquery-3.1.1.min.js " %}"></script> -->
 	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 </head>
+
 <body>
 	<!--início do menu-->
 	<nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{% url 'dashboard' %}">CRM Vendas</a>
-      </div>
-	    <div class="collapse navbar-collapse" id="menu">
-	      	<ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Sair <span class="glyphicon glyphicon-log-out"></span></a></li>
-	  	  	</ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav><!-- /.navbar-default -->
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{% url 'dashboard' %}">CRM Vendas</a>
+			</div>
+			<div class="collapse navbar-collapse" id="menu">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="#">Sair
+							<span class="glyphicon glyphicon-log-out"></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<!-- /.navbar-default -->
 	<!--fim do menu-->
-	
+
 	<!--formulario de venda-->
 	<div class="container div-form-venda">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+				<!-- Formulário -->
 				<form class="form-horizontal form-venda" action="" method="post">
-					<div class="form-group">
-						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="id_cliente">Cliente:</label>
-						</div>
-						<div class="col-xs-12 col-md-10">
-							<select class="form-control" id="id_cliente">
-								<option></option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="data">Data:</label>
-						</div>
-						<div class="col-xs-12 col-md-10">
-							<input type="text" name="data" id="data" class="form-control" autofocus="true">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="descricao">Descrição:</label>
-						</div>
-						<div class="col-xs-12 col-md-10">
-							<input type="number" name="descricao" id="descricao" class="form-control">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="preco_unitario">Valor:</label>
-						</div>
-						<div class="col-xs-12 col-md-10">
-							<input type="text" name="preco_unitario" id="preco_unitario" class="form-control">
-						</div>
-					</div>
-					<button type="submit" class="btn btn-success">Cadastrar <span class="glyphicon glyphicon-plus"></span></button>
+					{% csrf_token %} {% bootstrap_form form %} {% buttons %}
+					<button type="submit" class="btn btn-primary">
+						{% bootstrap_icon "plus" %} Cadastrar
+					</button>
+					{% endbuttons %}
 				</form>
-			</div><!--col-->
-		</div><!--row-->
-	</div><!--container-->
+			</div>
+			<!--col-->
+		</div>
+		<!--row-->
+	</div>
+	<!--container-->
 	<!--fim do formulario de venda-->
 
 </body>
+
 </html>
