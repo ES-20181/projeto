@@ -35,7 +35,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{% url 'nova_venda' %}">CRM Vendas</a>
+        <a class="navbar-brand" href="{% url 'nova' %}">CRM Vendas</a>
       </div>
       <div class="collapse navbar-collapse" id="menu">
         <ul class="nav navbar-nav navbar-right">
@@ -60,20 +60,17 @@
         <ul class="nav nav-sidebar">
           <li>
             <a href="#" class="nav-link active">
-              <span class="glyphicon glyphicon-shopping-cart"> Vendas</span>
+              <span class="glyphicon glyphicon-shopping-cart">Vendas</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <span class="glyphicon glyphicon-list"> Histórico</a>
+            <a href="{% url 'historico' %}" class="nav-link">
+              <!-- Usar esse padrão para os ícones! -->
+              <span>{% bootstrap_icon "list" %} Histórico</a>
           </li>
           <li>
             <a href="#" class="nav-link">
-              <span class="glyphicon glyphicon-list-alt"> Estoque</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link">
-              <span class="glyphicon glyphicon-tag"> Reservas</a>
+              <span class="glyphicon glyphicon-list-alt">Estoque</a>
           </li>
         </ul>
       </div>
@@ -82,7 +79,7 @@
 
         <div class="row placeholders">
 
-          <a href="{% url 'nova_venda' %}" style="color: gray">
+          <a href="{% url 'nova' %}" style="color: gray">
             <div class="col-xs-6 col-sm-3 placeholder" id="bloco">
               <h3>Cadastrar
                 <span class="glyphicon glyphicon-plus"></span>
@@ -90,7 +87,7 @@
             </div>
           </a>
 
-          <a href="{% url 'buscar_vendas' %}" style="color: gray">
+          <a href="{% url 'buscar' %}" style="color: gray">
             <div class="col-xs-6 col-sm-3 placeholder" id="bloco">
               <h3>Buscar
                 <span class="glyphicon glyphicon-search"></span>
@@ -117,7 +114,7 @@
               {% for venda in vendas %}
               <tr>
                 <td>{{ venda.data }}</td>
-                <a href="{% url 'atualizar_venda' venda.id %}">
+                <a href="{% url 'atualizar' venda.id %}">
                   <td>{{ venda.descricao }}</td>
                 </a>
                 <td>{{ venda.valor }}</td>

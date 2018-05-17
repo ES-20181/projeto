@@ -11,8 +11,8 @@ urlpatterns = [
     path('historico', views.historico, name='historico'),
 
     # CRUD
-    path('nova', views.nova_venda, name='nova_venda'),
-    path('buscar', views.buscar_vendas, name='buscar_vendas'),
-    path('atualizar/<int:id>/', views.atualizar_venda, name='atualizar_venda'),
-    path('deletar/<int:id>/', views.deletar_venda, name='deletar_venda')
+    path('nova', views.nova_venda, name='nova'),
+    path('buscar', views.buscar_vendas, name='buscar'),
+    path('atualizar/<int:id>/', views.atualizar_venda, name='atualizar'),
+    path('deletar/<int:id>/', views.deletar_venda, name='deletar')
 ]
