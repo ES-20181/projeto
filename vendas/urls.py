@@ -3,8 +3,8 @@ from . import views
 
 urlpatterns = [
     # Autenticação
-    path('', views.login, name='login'),
-    path('register', views.register, name='cadastro'),
+    # path('', views.login, name='login'),
+    # path('register', views.register, name='cadastro'),
 
     # Módulos
     path('dashboard', views.dashboard, name='dashboard'),
