@@ -25,12 +25,12 @@ def register(request):
 
 def dashboard(request):
     vendas = Venda.objects.all()
-    return render(request, 'vendas/dashboard.html', {'vendas': vendas})
+    return render(request, 'vendas/index.html', {'vendas': vendas})
 
 
 def historico(request):
     vendas = Venda.objects.all()
-    return render(request, 'vendas/historico.html', {'vendas': vendas})
+    return render(request, 'vendas/tables.html', {'vendas': vendas})
 
 
 def nova_venda(request):

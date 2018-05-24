@@ -2,13 +2,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # Autenticação
-    # path('', views.login, name='login'),
-    # path('register', views.register, name='cadastro'),
-
-    # Módulos
-    path('dashboard', views.dashboard, name='dashboard'),
-    path('historico', views.historico, name='historico'),
+    path('', views.dashboard, name='dashboard'),
+    path('tables', views.historico, name='historico'),
+    path('login', login, name='login'),
 
     # CRUD
     path('nova', views.nova_venda, name='nova'),
