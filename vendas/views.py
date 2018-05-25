@@ -5,27 +5,8 @@ from .models import Venda
 from .forms import VendaForm
 
 
-def register(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-
-        if form.is_valid():
-            form.save()
-            nome = form.cleaned_data['nome']
-            senha = form.cleaned_data['senha']
-            usuario = authenticate(nome=nome, senha=senha)
-            login(request, usuario)
-            redirect('dashboard')
-        else:
-            form = UserCreationForm()
-
-    context = {'form': form}
-    return render(request, 'registration/register.html', context)
-
-
-def dashboard(request):
-    vendas = Venda.objects.all()
-    return render(request, 'vendas/index.html', {'vendas': vendas})
+def index(request):
+    return render(request, 'vendas/index.html')
 
 
 def historico(request):
@@ -33,43 +14,21 @@ def historico(request):
     return render(request, 'vendas/tables.html', {'vendas': vendas})
 
 
-def nova_venda(request):
-    form = VendaForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return redirect('listar_vendas')
-
-    return render(request, 'vendas/cad-venda.html', {'form': form})
+def register_teste(request):
+    return render(request, 'vendas/register.html')
 
 
-def buscar_vendas(request):
-    return render(request, 'vendas/busc-venda.html')
+def forgot_password(request):
+    return render(request, 'vendas/forgot-password.html')
 
 
-def atualizar_venda(request, id):
-    venda = Venda.objects.get(id=id)
-    form = VendaForm(request.POST or None, instance=venda)
-
-    if form.is_valid():
-        form.save()
-        return redirect('listar_vendas')
-
-    return render(request, 'vendas/vendas-form.html',
-                  {'form': form, 'venda': venda})
+def charts(request):
+    return render(request, 'vendas/charts.html')
 
 
-def deletar_venda(request, id):
-    venda = Venda.objects.get(id=id)
-
-    if request.method == 'POST':
-        venda.delete()
-        return redirect('listar_vendas')
-
-    return render(request,
-                  'vendas/venda-deletar-confirm.html',
-                  {'venda': venda})
+def blannk(request):
+    return render(request, 'vendas/blank.html')
 
 
-# def login(request):
-#     return render(request, 'vendas/login.html')
+def login_teste(request):
+    return render(request, 'vendas/login.html')
