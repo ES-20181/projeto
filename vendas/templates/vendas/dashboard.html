@@ -40,9 +40,11 @@
       <div class="collapse navbar-collapse" id="menu">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="#">Sair
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Sair
               <span class="glyphicon glyphicon-log-out"></span>
             </a>
+            {% endif %}
           </li>
         </ul>
       </div>
