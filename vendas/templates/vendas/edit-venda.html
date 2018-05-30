@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% load bootstrap3 %}	
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -60,7 +60,7 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Buscar Venda</h1>
+          <h1 class="page-header">Atualizar Venda</h1>
 
           <!--formulario de venda-->
 	<div class="container div-form-venda">
@@ -69,13 +69,39 @@
 				<form class="form-horizontal form-venda" action="" method="post">
 					<div class="form-group">
 						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="codigo">Código:</label>
+							<label class="control-label" for="id_cliente">Cliente:</label>
 						</div>
 						<div class="col-xs-12 col-md-10">
-							<input type="text" name="codigo" id="codigo" class="form-control" autofocus="true" required="true">
+							<select class="form-control" id="id_cliente">
+								<option></option>
+							</select>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-success">Buscar <span class="glyphicon glyphicon-search"></span></button>
+					<div class="form-group">
+						<div class="col-xs-12 col-md-2">
+							<label class="control-label" for="datepicker">Data:</label>
+						</div>
+						<div class="col-xs-12 col-md-10">
+							<input type="text" name="data" id="datepicker" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-12 col-md-2">
+							<label class="control-label" for="descricao">Descrição:</label>
+						</div>
+						<div class="col-xs-12 col-md-10">
+							<input type="number" name="descricao" id="descricao" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-xs-12 col-md-2">
+							<label class="control-label" for="preco_unitario">Valor:</label>
+						</div>
+						<div class="col-xs-12 col-md-10">
+							<input type="text" name="preco_unitario" id="preco_unitario" class="form-control">
+						</div>
+					</div>
+					<button type="submit" class="btn btn-success">Atualizar <span class="glyphicon glyphicon-refresh"></span></button>
 				</form>
 			</div><!--col-->
 		</div><!--row-->
