@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .models import Venda
 from .forms import VendaForm
+from datetime import date
 
 
 def register(request):
@@ -24,12 +25,13 @@ def register(request):
 
 
 def dashboard(request):
-    vendas = Venda.objects.all()
+    vendas = Venda.objects.filter(data=date.today()).order_by('-id')[:10]
     return render(request, 'vendas/dashboard.html', {'vendas': vendas})
 
 
 def historico(request):
     vendas = Venda.objects.all()
+    vendas = Vendas.objects.filter(data__lt=datetime.now())[:2]
     return render(request, 'vendas/historico.html', {'vendas': vendas})
 
 
@@ -69,7 +71,3 @@ def deletar_venda(request, id):
     return render(request,
                   'vendas/venda-deletar-confirm.html',
                   {'venda': venda})
-
-
-# def login(request):
-#     return render(request, 'vendas/login.html')
