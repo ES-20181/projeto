@@ -30,8 +30,7 @@ def dashboard(request):
 
 
 def historico(request):
-    vendas = Venda.objects.all()
-    vendas = Vendas.objects.filter(data__lt=datetime.now())[:2]
+    vendas = Venda.objects.all().order_by('-id')
     return render(request, 'vendas/historico.html', {'vendas': vendas})
 
 
@@ -46,7 +45,14 @@ def nova_venda(request):
 
 
 def buscar_vendas(request):
+    # vendas = Venda.objects.filter(id=id).order_by('-id')
     return render(request, 'vendas/busc-venda.html')
+
+
+def buscar_id(request, id):
+    codigo = int(request.GET.get("codigo"))
+    vendas = Venda.objects.filter(id=codigo).order_by('-id')
+    return render(request, 'vendas/busc-venda.html', {'vendas': vendas})
 
 
 def atualizar_venda(request, id):

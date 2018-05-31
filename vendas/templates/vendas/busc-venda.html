@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<title>CRM Vendas</title>
 	<meta charset="utf-8">
@@ -9,86 +10,103 @@
 	<meta name="keywords" content="Sistemas, Restaurantes, Vendas, Controle, Estoque, CRM">
 	<meta http-equiv="X-UA-Compatible" content="IE-edge, chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
-	<link href="{% static "css/dashboard.css" %}" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="{% static "css/generic.css" %}">
-  	<script src="{% static "js/jquery-3.1.1.min.js" %}"></script>
-	<script src="{% static "js/bootstrap.min.js" %}"></script>
-  	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  	<!-- datepicker -->
-  	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" rel="stylesheet">
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
-  	<script>
-	    $(document).ready(function () {
-	      $('#datepicker').datepicker({
-	          format: "dd/mm/yyyy",
-	          language: "pt-BR",
-	      });
-	    });
-  	</script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link href="{% static 'css/dashboard.css' %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static " css/generic.css " %}">
+	<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<!-- datepicker -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#datepicker').datepicker({
+				format: "dd/mm/yyyy",
+				language: "pt-BR",
+			});
+		});
+	</script>
 </head>
+
 <body>
 	<!--início do menu-->
 	<nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="dashboard.html">CRM Vendas</a>
-      </div>
-	    <div class="collapse navbar-collapse" id="menu">
-	      	<ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Sair <span class="glyphicon glyphicon-log-out"></span></a></li>
-	  	  	</ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav><!-- /.navbar-default -->
+				<a class="navbar-brand" href="dashboard.html">CRM Vendas</a>
+			</div>
+			<div class="collapse navbar-collapse" id="menu">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Sair <span class="glyphicon glyphicon-log-out"></span></a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<!-- /.navbar-default -->
 	<!--fim do menu-->
-	
+
 	<!--inicio do dashboard-->
 	<div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li><a href="dashboard.html" class="nav-link active"><span class="glyphicon glyphicon-shopping-cart"> Vendas</span></a></li>
-            <li><a href="historico.html" class="nav-link"><span class="glyphicon glyphicon-list"> Histórico</a></li>
-            <li><a href="#" class="nav-link"><span class="glyphicon glyphicon-list-alt"> Estoque</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Buscar Venda</h1>
-
-          <!--formulario de venda-->
-	<div class="container div-form-venda">
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
-				<form class="form-horizontal form-venda" action="" method="post">
-					<div class="form-group">
-						<div class="col-xs-12 col-md-2">
-							<label class="control-label" for="codigo">Código:</label>
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="dashboard.html" class="nav-link active"><span class="glyphicon glyphicon-shopping-cart"> Vendas</span></a></li>
+					<li><a href="historico.html" class="nav-link"><span class="glyphicon glyphicon-list"> Histórico</a></li>
+					<li><a href="#" class="nav-link"><span class="glyphicon glyphicon-list-alt"> Estoque</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header">Buscar Venda</h1>
+
+				<!--formulario de venda-->
+				<div class="container div-form-venda">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+							<form class="form-horizontal form-venda" action="{% url 'buscar-id' %}" method="post">
+								{% csrf_token %}
+								<div class="form-group">
+									<div class="col-xs-12 col-md-2">
+										<label class="control-label" for="codigo">Código:</label>
+									</div>
+									<div class="col-xs-12 col-md-10">
+										<input type="text" name="codigo" id="codigo" class="form-control" autofocus="true" required="true">
+									</div>
+								</div>
+								<button type="submit" class="btn btn-success">Buscar <span class="glyphicon glyphicon-search"></span></button>
+							</form>
 						</div>
-						<div class="col-xs-12 col-md-10">
-							<input type="text" name="codigo" id="codigo" class="form-control" autofocus="true" required="true">
-						</div>
+						<!--col-->
 					</div>
-					<button type="submit" class="btn btn-success">Buscar <span class="glyphicon glyphicon-search"></span></button>
-				</form>
-			</div><!--col-->
-		</div><!--row-->
-	</div><!--container-->
-	<!--fim do formulario de venda-->
-          
-          <div class="footer" align="center">
-            <h5>Desenvolvido por G3Team</h5>
-          </div>
-        </div><!--main dashboard-->
-      </div><!--row-->
-    </div><!--container fluid-->
+					<!--row-->
+				</div>
+				<!--container-->
+				<!--fim do formulario de venda-->
+
+				{% for venda in vendas %}
+					{{venda.data}}
+					{{venda.descricao}}
+				{% endfor %}
+
+				<div class="footer" align="center">
+					<h5>Desenvolvido por G3Team</h5>
+				</div>
+			</div>
+			<!--main dashboard-->
+		</div>
+		<!--row-->
+	</div>
+	<!--container fluid-->
 	<!--fim do dashboard-->
 
 </body>
+
 </html>

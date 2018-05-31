@@ -51,7 +51,7 @@
     </div><!-- /.container-fluid -->
   </nav><!-- /.navbar-default -->
   <!--fim do menu-->
-  
+
   <!--inicio do dashboard-->
   <div class="container-fluid">
       <div class="row">
@@ -63,7 +63,7 @@
               </a>
             </li>
             <li>
-              <a href="historico.html" class="nav-link">
+              <a href="{% url 'historico' %}" class="nav-link">
                  <!-- Usar esse padrão para os ícones! -->
                 <span> {% bootstrap_icon "list" %} Histórico</a>
               </li>
@@ -135,7 +135,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Excluir</h5>
-                  
+
                 </div>
                 <div class="modal-body">
                   <h3>Deseja realmente excluir esta venda ?</h3>
